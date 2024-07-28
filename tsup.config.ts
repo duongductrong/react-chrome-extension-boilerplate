@@ -1,8 +1,8 @@
-import { NodeModulesPolyfillPlugin } from "@esbuild-plugins/node-modules-polyfill";
-import { copy } from "esbuild-plugin-copy";
-import { defineConfig } from "tsup";
+import { NodeModulesPolyfillPlugin } from "@esbuild-plugins/node-modules-polyfill"
+import { copy } from "esbuild-plugin-copy"
+import { defineConfig } from "tsup"
 
-const tag = "chrome-extension-boilerplate-container";
+const tag = "chrome-extension-boilerplate-container"
 
 export default defineConfig({
   target: "chrome112",
@@ -20,6 +20,7 @@ export default defineConfig({
     content: "src/scripts/content-script/index.ts",
     "popup/index": "src/scripts/popup/index.tsx",
     "options/index": "src/scripts/options/index.tsx",
+    "page/index": "src/scripts/page/index.tsx",
   },
 
   outExtension: () => ({ js: ".js" }),
@@ -43,7 +44,7 @@ export default defineConfig({
           });
         }
       })
-    `;
+    `
   },
 
   esbuildPlugins: [
@@ -70,7 +71,12 @@ export default defineConfig({
           to: "./options",
           watch: process.env.NODE_ENV === "development",
         },
+        {
+          from: "./src/scripts/page/index.html",
+          to: "./page",
+          watch: process.env.NODE_ENV === "development",
+        },
       ],
     }),
   ],
-});
+})
