@@ -1,12 +1,12 @@
 {
   "manifest_version": 3,
   "name": "chrome-extension-boilerplate",
-  "description": "A pretty and simple note-taking app",
+  "description": "A chrome extension boilerplate",
   "version": "1.0",
   "action": {
-    "default_popup": "dist/popup/index.html",
+    "default_popup": "popup/index.html",
     "default_icon": {
-      "16": "dist/assets/images/icon-16.png"
+      "16": "assets/images/icon-16.png"
     },
     "default_title": "chrome-extension-boilerplate",
     "__chrome|opera__chrome_style": false,
@@ -15,12 +15,13 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>", "*://*/*"],
-      "js": ["./dist/content.js"],
+      "js": ["content.js"],
       "all_frames": true
     }
   ],
   "background": {
-    "service_worker": "./dist/background.js"
+    "service_worker": "background.js",
+    "type": "module"
   },
   "permissions": ["storage", "activeTab", "scripting"]
 }

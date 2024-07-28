@@ -54,29 +54,25 @@ export default defineConfig({
         {
           from: ["./src/assets/**/*"],
           to: ["./assets"],
-          watch: process.env.NODE_ENV === "development",
         },
         {
           from: "./manifest.json",
           to: "./manifest.json",
-          watch: process.env.NODE_ENV === "development",
         },
         {
           from: "./src/scripts/popup/index.html",
           to: "./popup",
-          watch: process.env.NODE_ENV === "development",
         },
         {
           from: "./src/scripts/options/index.html",
           to: "./options",
-          watch: process.env.NODE_ENV === "development",
         },
         {
           from: "./src/scripts/page/index.html",
           to: "./page",
-          watch: process.env.NODE_ENV === "development",
         },
       ],
+      watch: process.env.NODE_ENV === "development",
     }),
   ],
 })
