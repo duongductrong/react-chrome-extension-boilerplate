@@ -1,11 +1,11 @@
 export const getPage = (extension: string) => {
-  return `dist/page/${extension}`
+  return `page/${extension}`
 }
 
 export const getPopup = (extension: string) => {
-  return `dist/popup/${extension}`
+  return `popup/${extension}`
 }
 
 export const getOptions = (extension: string) => {
-  return `dist/options/${extension}`
+  return `options/${extension}`
 }
