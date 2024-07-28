@@ -12,5 +12,6 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "files": ["commitlint.config.ts"]
 }

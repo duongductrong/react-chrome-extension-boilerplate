@@ -1,8 +1,10 @@
-import { browser } from "webextension-polyfill-ts";
+/* eslint-disable no-console */
+
+import { browser } from "webextension-polyfill-ts"
 
 browser.runtime.onInstalled.addListener((): void => {
-  console.log("🦄", "extension installed");
-});
+  console.log("🦄", "extension installed")
+})
 
 // Please remove default_popup from manifest.json
 // And you can enable this code to open to communicate with content

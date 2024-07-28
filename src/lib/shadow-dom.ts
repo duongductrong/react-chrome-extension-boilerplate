@@ -1,43 +1,43 @@
-import "@webcomponents/webcomponentsjs";
+import "@webcomponents/webcomponentsjs"
 
 export type DefineShadowElementSetupOptions = {
-  onBefore?: (element: HTMLElement) => void;
+  onBefore?: (element: HTMLElement) => void
 
-  onReady?: (element: HTMLElement, shadowElement: HTMLElement) => void;
-};
+  onReady?: (element: HTMLElement, shadowElement: HTMLElement) => void
+}
 
 function defineShadowElement(tag: string, id: string) {
   class CustomContainer extends HTMLElement {
     constructor() {
       // Extends all HTMLElement properties own by it self
-      super();
+      super()
 
-      const shadow = this.attachShadow({ mode: "open" });
+      const shadow = this.attachShadow({ mode: "open" })
 
-      const container = document.createElement("div");
-      container.id = id;
-      container.style.setProperty("font-size", "16px");
+      const container = document.createElement("div")
+      container.id = id
+      container.style.setProperty("font-size", "16px")
 
-      shadow.appendChild(container);
+      shadow.appendChild(container)
     }
   }
 
-  customElements.define(tag, CustomContainer);
+  customElements.define(tag, CustomContainer)
 
   return {
-    setup: function (options?: DefineShadowElementSetupOptions) {
-      const container = document.createElement(tag);
+    setup(options?: DefineShadowElementSetupOptions) {
+      const container = document.createElement(tag)
 
-      options?.onBefore?.(container);
+      options?.onBefore?.(container)
 
-      document.documentElement.appendChild(container);
+      document.documentElement.appendChild(container)
 
       options?.onReady?.(
         container,
-        container.shadowRoot.querySelector(`#${id}`) as HTMLElement
-      );
+        container.shadowRoot.querySelector(`#${id}`) as HTMLElement,
+      )
     },
-  };
+  }
 }
 
-export { defineShadowElement };
+export { defineShadowElement }

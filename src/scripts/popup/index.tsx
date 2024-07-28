@@ -1,9 +1,7 @@
-import { createRoot } from "react-dom/client";
-
-console.log("🦄", "Hello from Popup");
+import { createRoot } from "react-dom/client"
 
 const Popup = () => {
-  return <div>Popup</div>;
-};
+  return <div>Popup</div>
+}
 
-createRoot(document.getElementById("root")!).render(<Popup />);
+createRoot(document.getElementById("root")!).render(<Popup />)

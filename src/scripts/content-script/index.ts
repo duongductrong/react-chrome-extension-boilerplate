@@ -1,8 +1,10 @@
-import { browser } from "webextension-polyfill-ts";
-import "./renderer";
+/* eslint-disable no-console */
 
-console.log("🦄", "content script loaded");
+import { browser } from "webextension-polyfill-ts"
+import "./renderer"
 
-browser.action.onClicked.addListener(function (tab) {
-  console.log("Hello");
-});
+console.log("🦄", "content script loaded")
+
+browser.action.onClicked.addListener(() => {
+  console.log("Hello")
+})

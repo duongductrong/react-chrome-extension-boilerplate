@@ -1,10 +1,7 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
+import { createRoot } from "react-dom/client"
 
-type Props = {};
+const Popup = () => {
+  return <div>Options</div>
+}
 
-const Popup = (props: Props) => {
-  return <div>Options</div>;
-};
-
-createRoot(document.getElementById("root")!).render(<Popup />);
+createRoot(document.getElementById("root")!).render(<Popup />)
