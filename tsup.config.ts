@@ -35,9 +35,8 @@ export default defineConfig({
         if (document.head) {
           document.head.appendChild(style);
 
-          const root = document.getElementsByTagName("${tag}")?.[0].shadowRoot;
-
-          root.appendChild(style);
+          const root = document.getElementsByTagName("${tag}")?.[0]?.shadowRoot;
+          root?.appendChild?.(style);
         } else {
           document.addEventListener("DOMContentLoaded", function() {
             document.head.appendChild(style);
