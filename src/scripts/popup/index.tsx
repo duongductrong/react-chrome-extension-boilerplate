@@ -2,6 +2,8 @@ import { createRoot } from "react-dom/client"
 import { browser } from "webextension-polyfill-ts"
 import { getPage } from "@/utils/urls"
 
+import "../../globals.css"
+
 const Popup = () => {
   const handleOpenPage = () => {
     browser.tabs.create({
