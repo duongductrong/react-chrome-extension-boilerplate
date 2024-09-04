@@ -79,19 +79,9 @@ The built files will be available in the `dist/` directory.
 
 The project uses Shadow DOM for content scripts to isolate styles. The implementation can be found in:
 
-```typescript:src/lib/shadow-dom.ts
-startLine: 1
-endLine: 43
-```
-
 ## Rendering
 
 The `renderer` function in `src/lib/renderer.tsx` is used to render React components within the Shadow DOM:
-
-```typescript:src/lib/renderer.tsx
-startLine: 5
-endLine: 21
-```
 
 ## Contributing
 
